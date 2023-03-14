@@ -1,0 +1,183 @@
+html {
+    scroll-behavior: smooth;
+  }
+  /* Body dfault font styling and setting padding and margin to zero */
+  body {
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* for the nav tag */
+  nav {
+    background-color: #111;
+    color: white;
+    padding: 20px 50px;
+  }
+  
+  /* setting div nav top container of the page */
+  /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
+  .navTop {
+    display: flex; 
+    align-items: center;
+    justify-content: space-around; /*Align the flex items at the center of the container: */
+  } 
+  
+  
+  /* Setting div search bar in the Nav container */
+  .search {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  /* Setting up the div search input */
+  .searchInput {
+    border: none;
+    background-color: transparent;
+  }
+  
+  /* text in the placeholder */
+  .searchInput::placeholder {
+    color: lightgray;
+  }
+  
+  /* setting div Nav item */
+  .limitedOffer {
+    font-size: 20px;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+  }
+  
+  
+  /* setting div navBottom container of the page */
+  .navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  /* setting up different menu items */
+  .menuItem {
+    margin-right: 70px;
+    cursor: pointer;
+    color: lightgray;
+    font-weight: 400;
+  }
+  
+  /* setting up the slider for each menu. https://bennettfeely.com/clippy/*/
+  .slider {
+    background-image: url('../img/background1.jpg');
+    clip-path: polygon(0 0, 100% 0, 100% 12%, 100% 89%, 85% 100%, 15% 100%, 0 90%, 0 13%); /* setting the background image shape */
+    overflow: hidden;
+  }
+  
+  /* Setting up the complete sliding items as per the Nav bar */
+  .sliderWrapper {
+    display: flex;
+    width: 500vw;
+    transition: all 1.5s ease-in-out;  /* for java script file transition in out timing for slider wrapping */
+  }
+  
+  .sliderItem {
+    width: 100vw; /*viewport width - adjustable to available screen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;  /* to keep the text (slider text) absolute w.r.t this box */
+  }
+  
+  .sliderBg {
+    width: 850px; 
+    height: 490px;
+    border-radius: 20px;
+    position: absolute;
+    background-color: lightcoral;
+  }
+  
+  
+  .sliderImg {
+    z-index: 1;
+    border-radius: 20px
+    
+  }
+  
+/* setting up of slider titles text content */
+    .sliderTitle {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    color: rgb(82, 3, 82);
+    z-index: 1;
+  }
+  
+  
+  /* styling of price box in inside the slider box */
+  .sliderPrice {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    border: 1px solid gray;
+    z-index: 1;
+  }
+  
+  .buyButton {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    border: 1px solid gray;
+    background-color: black;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  /* buy button Hover Effect */
+  .buyButton:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .sliderItem:nth-child(1) .sliderBg {
+    background-color: #369e62;
+  }
+  .sliderItem:nth-child(2) .sliderBg {
+    background-color: rebeccapurple;
+  }
+  .sliderItem:nth-child(3) .sliderBg {
+    background-color: teal;
+  }
+  .sliderItem:nth-child(4) .sliderBg {
+    background-color: cornflowerblue;
+  }
+  .sliderItem:nth-child(5) .sliderBg {
+    background-color: rgb(124, 115, 80);
+  }
+  
+  .sliderItem:nth-child(1) .sliderPrice {
+    color: #369e62;
+  }
+  .sliderItem:nth-child(2) .sliderPrice {
+    color: white;
+  }
+  .sliderItem:nth-child(3) .sliderPrice {
+    color: teal;
+  }
+  .sliderItem:nth-child(4) .sliderPrice {
+    color: cornflowerblue;
+  }
+  .sliderItem:nth-child(5) .sliderPrice {
+    color: cornsilk;
+  }
+  
