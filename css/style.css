@@ -1,111 +1,111 @@
 html {
     scroll-behavior: smooth;
-  }
+}
   /* Body dfault font styling and setting padding and margin to zero */
-  body {
+body {
     font-family: "Lato", sans-serif;
     padding: 0;
     margin: 0;
-  }
+}
   
   /* for the nav tag */
-  nav {
+nav {
     background-color: #111;
     color: white;
     padding: 20px 50px;
-  }
+}
   
   /* setting div nav top container of the page */
   /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
-  .navTop {
+.navTop {
     display: flex; 
     align-items: center;
     justify-content: space-around; /*Align the flex items at the center of the container: */
-  } 
+} 
   
   
   /* Setting div search bar in the Nav container */
-  .search {
+.search {
     display: flex;
     align-items: center;
     background-color: gray;
     padding: 10px 20px;
     border-radius: 10px;
-  }
+}
   
   /* Setting up the div search input */
-  .searchInput {
+.searchInput {
     border: none;
     background-color: transparent;
-  }
+}
   
   /* text in the placeholder */
-  .searchInput::placeholder {
+.searchInput::placeholder {
     color: lightgray;
-  }
+}
   
   /* setting div Nav item */
-  .limitedOffer {
+.limitedOffer {
     font-size: 20px;
     border-bottom: 2px solid green;
     cursor: pointer;
-  }
+}
   
   
-  /* setting div navBottom container of the page */
-  .navBottom {
+/* setting div navBottom container of the page */
+.navBottom {
     display: flex;
     align-items: center;
     justify-content: start;
-  }
+}
   
   /* setting up different menu items */
-  .menuItem {
+.menuItem {
     margin-right: 70px;
     cursor: pointer;
     color: lightgray;
     font-weight: 400;
-  }
+}
   
   /* setting up the slider for each menu. https://bennettfeely.com/clippy/*/
-  .slider {
+.slider {
     background-image: url('../img/background1.jpg');
     clip-path: polygon(0 0, 100% 0, 100% 12%, 100% 89%, 85% 100%, 15% 100%, 0 90%, 0 13%); /* setting the background image shape */
     overflow: hidden;
-  }
+}
   
   /* Setting up the complete sliding items as per the Nav bar */
-  .sliderWrapper {
+.sliderWrapper {
     display: flex;
     width: 500vw;
     transition: all 1.5s ease-in-out;  /* for java script file transition in out timing for slider wrapping */
-  }
+}
   
-  .sliderItem {
+.sliderItem {
     width: 100vw; /*viewport width - adjustable to available screen*/
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;  /* to keep the text (slider text) absolute w.r.t this box */
-  }
+}
   
-  .sliderBg {
+.sliderBg {
     width: 850px; 
     height: 490px;
     border-radius: 20px;
     position: absolute;
     background-color: lightcoral;
-  }
+}
   
   
-  .sliderImg {
+.sliderImg {
     z-index: 1;
     border-radius: 20px
     
-  }
+}
   
 /* setting up of slider titles text content */
-    .sliderTitle {
+.sliderTitle {
     position: absolute;
     top: 10%;
     right: 8%;
@@ -114,11 +114,11 @@ html {
     text-align: center;
     color: rgb(82, 3, 82);
     z-index: 1;
-  }
+}
   
   
   /* styling of price box in inside the slider box */
-  .sliderPrice {
+.sliderPrice {
     position: absolute;
     top: 10%;
     left: 10%;
@@ -128,9 +128,10 @@ html {
     color: white;
     border: 1px solid gray;
     z-index: 1;
-  }
+}
   
-  .buyButton {
+  /* set buy/shop button style */
+.buyButton {
     position: absolute;
     top: 70%;
     right: 10%;
@@ -141,43 +142,187 @@ html {
     background-color: black;
     z-index: 1;
     cursor: pointer;
-  }
+}
   
   /* buy button Hover Effect */
-  .buyButton:hover {
+.buyButton:hover {
     background-color: white;
     color: black;
-  }
+}
   
-  .sliderItem:nth-child(1) .sliderBg {
+  /* setting up color for each slider image frame */ 
+.sliderItem:nth-child(1) .sliderBg {
     background-color: #094622;
-  }
-  .sliderItem:nth-child(2) .sliderBg {
+}
+.sliderItem:nth-child(2) .sliderBg {
     background-color: rebeccapurple;
-  }
-  .sliderItem:nth-child(3) .sliderBg {
+}
+.sliderItem:nth-child(3) .sliderBg {
     background-color: teal;
-  }
-  .sliderItem:nth-child(4) .sliderBg {
+}
+.sliderItem:nth-child(4) .sliderBg {
     background-color: cornflowerblue;
-  }
-  .sliderItem:nth-child(5) .sliderBg {
+}
+.sliderItem:nth-child(5) .sliderBg {
     background-color: rgb(48, 48, 4);
-  }
+}
   
-  .sliderItem:nth-child(1) .sliderPrice {
+  /* setting up color for each slider price tag as per the color of the image frame*/ 
+.sliderItem:nth-child(1) .sliderPrice {
     color: #094622;
-  }
-  .sliderItem:nth-child(2) .sliderPrice {
+}
+.sliderItem:nth-child(2) .sliderPrice {
     color: rgb(75, 4, 4);
-  }
-  .sliderItem:nth-child(3) .sliderPrice {
+}
+.sliderItem:nth-child(3) .sliderPrice {
     color: teal;
-  }
-  .sliderItem:nth-child(4) .sliderPrice {
+}
+.sliderItem:nth-child(4) .sliderPrice {
     color: cornflowerblue;
-  }
-  .sliderItem:nth-child(5) .sliderPrice {
+}
+.sliderItem:nth-child(5) .sliderPrice {
     color: rgb(22, 18, 2);
-  }
+}
+ /* setting up features like shipping, return gift cards etc */
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+.feature {
+    display: flex;
+    flex-direction: column; /* to set flex items column wise */
+    align-items: center;
+    text-align: center;
+}
   
+.featureIcon {
+    width: 50px;
+    height: 50px;
+}
+  
+.featureTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+  
+.featureDesc {
+    color: gray;
+    width: 50%;
+    height: 100px;
+}
+
+/* Shop by Collection */
+.galleryHead{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+}
+.gallery {
+    padding: 50px;
+    display: flex;
+}
+  
+.galleryItem {
+    flex: 1;
+    padding: 50px;
+}
+  
+.galleryImg {
+      width: 100%;
+}
+
+.newSeason {
+    display: flex;
+}
+
+/* New Season, wedding collection and New Arrivals styling and setup */ 
+.nsItem {
+    flex: 1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+.nsImg {
+    width: 100%;
+    height: 500px;
+}
+  
+.nsTitle {
+    font-size: 40px;
+}
+  
+.nsButton {
+    padding: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*Footer styling below */
+footer {
+    display: flex;
+}
+  
+.footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+  
+.fMenuTitle {
+    font-size: 16px;
+}
+  
+.fList {
+    padding: 0;
+    list-style: none;
+}
+  
+.fListItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+}
+  
+.footerRight {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.fInput {
+    padding: 5px;
+}
+  
+.fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+  
+.fIcons{
+    display: flex;
+}
+  
+.fIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+  
+.copyright{
+    font-weight: 300;
+    font-size: 14px;
+}
