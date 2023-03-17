@@ -7,17 +7,21 @@ body {
     padding: 0;
     margin: 0;
 }
-  
+
+/* to set no decoration in the text for links in the nav bar */
+a{
+    text-decoration : none;
+}
   /* for the nav tag */
 nav {
-    background-color: #111;
+    background-color: black;
     color: white;
     padding: 20px 50px;
 }
   
-  /* setting div nav top container of the page */
+  /* setting div navHead1 container of the page */
   /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
-.navTop {
+.navHead1 {
     display: flex; 
     align-items: center;
     justify-content: space-around; /*Align the flex items at the center of the container: */
@@ -52,15 +56,15 @@ nav {
 }
   
   
-/* setting div navBottom container of the page */
-.navBottom {
+/* setting div navHead2 container of the page */
+.navHead2 {
     display: flex;
     align-items: center;
     justify-content: start;
 }
   
   /* setting up different menu items */
-.menuItem {
+.category {
     margin-right: 70px;
     cursor: pointer;
     color: lightgray;
@@ -68,7 +72,7 @@ nav {
 }
   
   /* setting up the slider for each menu. https://bennettfeely.com/clippy/*/
-.slider {
+.sliderContainer {
     background-image: url('../img/background1.jpg');
     clip-path: polygon(0 0, 100% 0, 100% 12%, 100% 89%, 85% 100%, 15% 100%, 0 90%, 0 13%); /* setting the background image shape */
     overflow: hidden;
@@ -81,7 +85,7 @@ nav {
     transition: all 1.5s ease-in-out;  /* for java script file transition in out timing for slider wrapping */
 }
   
-.sliderItem {
+.containerItem {
     width: 100vw; /*viewport width - adjustable to available screen*/
     display: flex;
     align-items: center;
@@ -89,7 +93,7 @@ nav {
     position: relative;  /* to keep the text (slider text) absolute w.r.t this box */
 }
   
-.sliderBg {
+.ItemBg {
     width: 850px; 
     height: 490px;
     border-radius: 20px;
@@ -98,14 +102,14 @@ nav {
 }
   
   
-.sliderImg {
+.ItemImg {
     z-index: 1;
     border-radius: 20px
     
 }
   
 /* setting up of slider titles text content */
-.sliderTitle {
+.ItemTitle {
     position: absolute;
     top: 10%;
     right: 8%;
@@ -115,23 +119,11 @@ nav {
     color: rgb(82, 3, 82);
     z-index: 1;
 }
-  
-  
-  /* styling of price box in inside the slider box */
-.sliderPrice {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    font-size: 60px;
-    font-weight: 300;
-    text-align: center;
-    color: white;
-    border: 1px solid gray;
-    z-index: 1;
-}
+
+
   
   /* set buy/shop button style */
-.buyButton {
+.Buy {
     position: absolute;
     top: 70%;
     right: 10%;
@@ -144,104 +136,88 @@ nav {
     cursor: pointer;
 }
   
-  /* buy button Hover Effect */
-.buyButton:hover {
+  /* buy Hover Effect */
+.Buy:hover {
     background-color: white;
     color: black;
 }
   
-  /* setting up color for each slider image frame */ 
-.sliderItem:nth-child(1) .sliderBg {
+  /* setting up color for each slider Itemimage frame */ 
+.containerItem:nth-child(1) .ItemBg {
     background-color: #094622;
 }
-.sliderItem:nth-child(2) .sliderBg {
+.containerItem:nth-child(2) .ItemBg {
     background-color: rebeccapurple;
 }
-.sliderItem:nth-child(3) .sliderBg {
+.containerItem:nth-child(3) .ItemBg {
     background-color: teal;
 }
-.sliderItem:nth-child(4) .sliderBg {
+.containerItem:nth-child(4) .ItemBg {
     background-color: cornflowerblue;
 }
-.sliderItem:nth-child(5) .sliderBg {
+.containerItem:nth-child(5) .ItemBg {
     background-color: rgb(48, 48, 4);
 }
   
-  /* setting up color for each slider price tag as per the color of the image frame*/ 
-.sliderItem:nth-child(1) .sliderPrice {
-    color: #094622;
-}
-.sliderItem:nth-child(2) .sliderPrice {
-    color: rgb(75, 4, 4);
-}
-.sliderItem:nth-child(3) .sliderPrice {
-    color: teal;
-}
-.sliderItem:nth-child(4) .sliderPrice {
-    color: cornflowerblue;
-}
-.sliderItem:nth-child(5) .sliderPrice {
-    color: rgb(22, 18, 2);
-}
- /* setting up features like shipping, return gift cards etc */
-.features {
+ /* setting up services like shipping, return, gift cards etc */
+.Services {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 50px;
 }
-.feature {
+.Service {
     display: flex;
     flex-direction: column; /* to set flex items column wise */
     align-items: center;
     text-align: center;
 }
   
-.featureIcon {
+.Icon {
     width: 50px;
     height: 50px;
 }
   
-.featureTitle {
+.Name {
     font-size: 20px;
     font-weight: 600;
     margin: 20px;
 }
   
-.featureDesc {
+.Details {
     color: gray;
     width: 50%;
     height: 100px;
 }
 
 /* Shop by Collection */
-.galleryHead{
+.collectionHead{
     margin: auto;
     width: 50%;
     border: 3px solid green;
     padding: 10px;
     text-align: center;
 }
-.gallery {
+.collectionContainer {
     padding: 50px;
     display: flex;
 }
   
-.galleryItem {
+.collectionItem {
     flex: 1;
     padding: 50px;
 }
   
-.galleryImg {
+.collectionImg {
       width: 100%;
 }
 
-.newSeason {
+.promotion {
     display: flex;
 }
 
 /* New Season, wedding collection and New Arrivals styling and setup */ 
-.nsItem {
+.promotionItem {
     flex: 1;
     background-color: black;
     color: white;
@@ -252,16 +228,16 @@ nav {
     text-align: center;
 }
   
-.nsImg {
+.promotionImg {
     width: 100%;
     height: 500px;
 }
   
-.nsTitle {
+.promotionTitle {
     font-size: 40px;
 }
   
-.nsButton {
+.promotionButton {
     padding: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -289,7 +265,7 @@ footer {
     padding: 50px;
 }
   
-.fMenuTitle {
+.fTitle {
     font-size: 16px;
 }
   
@@ -298,7 +274,7 @@ footer {
     list-style: none;
 }
   
-.fListItem {
+.fItem {
     margin-bottom: 10px;
     color: gray;
     cursor: pointer;
