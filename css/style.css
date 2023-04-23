@@ -2,7 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 /* Body dfault font styling and setting padding and margin to zero */
+/* Body dfault font styling and setting padding and margin to zero */
 body {
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
@@ -11,7 +15,9 @@ body {
 /* to set no decoration in the text for links in the nav bar */
 a{
   text-decoration : none;
+  text-decoration : none;
 }
+/* for the nav tag */
 /* for the nav tag */
 nav {
   background-color: black;
@@ -23,16 +29,27 @@ nav {
 
 /* setting div navHead1 container of the page */
 /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
+
+/* setting div navHead1 container of the page */
+/* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
 .navHead1 {
+  display: flex; 
+  align-items: left;
+  justify-content: space-between; /*Align the flex items at the center of the container: */
   display: flex; 
   align-items: left;
   justify-content: space-between; /*Align the flex items at the center of the container: */
 } 
 
+
 .logo{
 max-width:  500px;
 max-height: 140px;
+max-width:  500px;
+max-height: 140px;
 }
+
+/* Setting div search bar in the Nav container */
 
 /* Setting div search bar in the Nav container */
 .search {
@@ -589,6 +606,108 @@ opacity: 1;
   transform: translateY(-50px);
   cursor: pointer;
 }
+/*
+.chart-container {
+width: 100%;
+height: 400px; /* adjust this value to change the height of the chart */
+/* max-width: 800px; /* adjust this value to set the maximum width of the chart */
+/*margin: 0 auto;
+position: relative;
+}
+.chart-container {
+margin: 20px;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px #ccc;
+}
+
+.chart-description {
+position: absolute; 
+bottom: 10px;
+left: 10px;
+background-color: #fff;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.chart-description p {
+margin: 0;
+}
+
+.chart-canvas {
+width: 50%;
+height: 300px;
+}
+*/
+
+/* new one
+.chart-container {
+display: flex;
+flex-wrap: wrap;
+background-color: lightgray;
+}
+.chart-container {
+height: 400px; /* adjust this value to change the height of the chart */
+/*max-width: 1000px; /* adjust this value to set the maximum width of the chart */
+/*margin: 0 auto;
+position: relative;
+}
+
+.chart-item {
+width: 50%;
+position: relative;
+}
+
+.chart-description {
+position: absolute;
+bottom: 0;
+left: 0;
+padding: 10px;
+background-color: rgba(255, 255, 255, 0.8);
+width: 100%;
+text-align: center;
+}
+
+canvas {
+width: 100% !important;
+height: 90% !important;
+} */
+
+.chart-container {
+display: flex;
+flex-wrap: wrap;
+background-color: lightgray;
+height: 500px;
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.chart-item {
+width: 50%;
+position: relative;
+height: 100%;
+box-sizing: border-box;
+padding: 20px;
+}
+
+.chart-description {
+position: relative;
+bottom: 0;
+left: 0;
+padding: 10px;
+width: 100%;
+text-align: center;
+}
+
+canvas {
+width: 100% !important;
+height: 90% !important;
+}
+
 
 /* To make webpage more responsive we are adding media function which makes webpage compatible for smaller screen devices 
 So basically when our css is less than 480px it apllies different css as below . Refrence w3 CSS @ media rule (https://www.w3schools.com/cssref/css3_pr_mediaquery.php)*/
@@ -685,6 +804,12 @@ So basically when our css is less than 480px it apllies different css as below .
     width: 90%;
     align-items: center;
     background-color: whitesmoke;
+  }
+
+  .chart-item {
+    width: 100%;
+    height: 50%;
+    padding: 10px;
   }
 }
   
