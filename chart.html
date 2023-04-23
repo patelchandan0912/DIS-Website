@@ -1,18 +1,14 @@
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Selected Lato fonts family from the fonts.google.com-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <!--For social media icons-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/style.css">
-    <title>Fashion Jewellers-Chart</title>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Selected Lato fonts family from the fonts.google.com-->
+  <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Fashion Jewellers- Sales Report Charts</title>
 </head>
 
 <body>
@@ -38,279 +34,91 @@
       </div>
     </nav>
 
-    <!--Chart page-->
-    <!--
-    <div>
-        <canvas id="barChart"></canvas>
+<!--Two type of chart used in our page (bar chart and pie chart)-->
+    
+  <div class="chart-container">
+    <div class="chart-item">
+      <canvas id="barChart"></canvas>
     </div>
-      
-    <div>
-        <canvas id="pieChart" width="200" height="200"></canvas>
+  <div class="chart-item">
+    <div class="chart-description">Based on the last year product sales, product distribution in the Store </div>
+      <canvas id="pieChart"></canvas>
     </div>
-     
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx1 = document.getElementById('barChart');
-        const ctx2 = document.getElementById('pieChart');
-      
-        new Chart(ctx1, {
-          type: 'bar',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-    
-        new Chart(ctx2, {
-          type: 'pie',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-              backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0'
-              ]
-            }]
-          },
-          options: {
-            responsive: true,
-            aspectRatio: 1,
-            maintainAspectRatio: true
-          }
-        });
-      </script> -->
-      <!--
-      <div class="chart-container">
-        <canvas id="barChart" class="chart-canvas"></canvas>
-        <div class="chart-description">
-          <p>This is the description for the bar chart</p>
-        </div>
-      </div>
-    
-      <div class="chart-container">
-        <canvas id="pieChart" class="chart-canvas"></canvas>
-        <div class="chart-description">
-          <p>This is the description for the pie chart</p>
-        </div>
-      </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-      <script>
-        const ctx1 = document.getElementById('barChart');
-        const ctx2 = document.getElementById('pieChart');
-    
-        new Chart(ctx1, {
-          type: 'bar',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        }); 
-    
-        new Chart(ctx2, {
-          type: 'pie',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-              backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0'
-              ]
-            }]
-          },
-          options: {
-            responsive: true,
-            aspectRatio: 1,
-            maintainAspectRatio: true
-          }
-        });
-      </script> -->
-
-    <!--
-    <div class="chart-container">
-        <div class="chart-item">
-          <div class="chart-description">Product of the year for the year 2022 - Earring </div>
-          <canvas id="barChart"></canvas>
-        </div>
-        <div class="chart-item">
-          <div class="chart-description">Based on the last Year product sales, product distribution in the Store </div>
-          <canvas id="pieChart"></canvas>
-        </div>
-    </div>
-      
+  </div>
+  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx1 = document.getElementById('barChart');
-        const ctx2 = document.getElementById('pieChart');
-      
-        new Chart(ctx1, {
-          type: 'bar',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-             
-              borderWidth:1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        
-        });
-      
-        new Chart(ctx2, {
-          type: 'pie',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              data: [100000, 80000, 50000, 200000],
-              backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0'
-              ]
-            }]
-          },
-          options: {
-            aspectRatio: 1,
-            responsive: true,
-            maintainAspectRatio: true
-          }
-        });
-      </script> -->
+    <script>
+      const ctx1 = document.getElementById('barChart');
+      const ctx2 = document.getElementById('pieChart');
     
-      <div class="chart-container">
-        <div class="chart-item">
-          <canvas id="barChart"></canvas>
-        </div>
-        <div class="chart-item">
-          <div class="chart-description">Based on the last Year product sales, product distribution in the Store </div>
-          <canvas id="pieChart"></canvas>
-        </div>
-      </div>
-      
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx1 = document.getElementById('barChart');
-        const ctx2 = document.getElementById('pieChart');
-      
-        new Chart(ctx1, {
-          type: 'bar',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              label: 'Sales by Product - Year 2022',
-              data: [100000, 80000, 50000, 200000],
-              backgroundColor: [
-                '#00008B',
-                '#00008B',
-                '#00008B',
-                '#00008B'
-              ],
-              borderColor: [
-                '#00008B',
-                '#00008B',
-                '#00008B',
-                '#00008B'
-              ],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
+          datasets: [{
+            label: 'Sales by Product - Year 2022',
+            data: [100000, 80000, 50000, 200000],
+            backgroundColor: [
+              '#FF6384',
+              '#36A2EB',
+              '#FFCE56',
+              '#4BC0C0'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
             }
           }
-        });
-      
-        new Chart(ctx2, {
-          type: 'pie',
-          data: {
-            labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
-            datasets: [{
-              data: [100000, 80000, 50000, 200000],
-              backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0'
-              ]
-            }]
-          },
-          options: {
-            aspectRatio: 1,
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-              legend: {
-                position: 'right'
-              },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    var label = context.label || '';
-                    if (label) {
-                      label += ': ';
-                    }
-                    var value = context.parsed || 0;
-                    var percent = context.dataset.data.reduce(function(total, currentValue, currentIndex, arr) {
-                      return total + currentValue;
-                    }, 0);
-                    percent = Math.round((value / percent) * 100);
-                    label += percent + '%';
-                    return label;
+        }
+      });
+    
+      new Chart(ctx2, {
+        type: 'pie',
+        data: {
+          labels: ['Necklace', 'Ring', 'Bracelet', 'Earrings'],
+          datasets: [{
+            data: [100000, 80000, 50000, 200000],
+            backgroundColor: [
+              '#FF6384',
+              '#36A2EB',
+              '#FFCE56',
+              '#4BC0C0'
+            ]
+          }]
+        },
+        options: {
+          aspectRatio: 1,
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              position: 'right'
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  var label = context.label || '';
+                  if (label) {
+                    label += ': ';
                   }
+                  var value = context.parsed || 0;
+                  var percent = context.dataset.data.reduce(function(total, currentValue, currentIndex, arr) {
+                    return total + currentValue;
+                  }, 0);
+                  percent = Math.round((value / percent) * 100);
+                  label += percent + '%';
+                  return label;
                 }
               }
             }
           }
-        });
-      </script>
-
-
+        }
+      });
+    </script>
 
     <!--  Footer common to all pages  -->
     <footer>
