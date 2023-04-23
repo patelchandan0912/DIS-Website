@@ -510,7 +510,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   background-color: lightgray;
-  height: 500px;
+  height: 600px;
+  width: auto;
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
