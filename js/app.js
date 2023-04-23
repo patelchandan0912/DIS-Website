@@ -1,4 +1,4 @@
-
+//js file and code for home page image auto slider
 const images = document.querySelectorAll('.slider img');
 
 let index = 0;

@@ -511,7 +511,7 @@ footer {
   flex-wrap: wrap;
   background-color: lightgray;
   height: 500px;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -535,7 +535,7 @@ footer {
 }
 
 canvas {
-  width: 100% !important;
+  width: 90% !important;
   height: 90% !important;
 }
 
