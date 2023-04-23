@@ -2,11 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 /* Body dfault font styling and setting padding and margin to zero */
-/* Body dfault font styling and setting padding and margin to zero */
 body {
-  font-family: "Lato", sans-serif;
-  padding: 0;
-  margin: 0;
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
@@ -15,9 +11,7 @@ body {
 /* to set no decoration in the text for links in the nav bar */
 a{
   text-decoration : none;
-  text-decoration : none;
 }
-/* for the nav tag */
 /* for the nav tag */
 nav {
   background-color: black;
@@ -29,27 +23,17 @@ nav {
 
 /* setting div navHead1 container of the page */
 /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
-
-/* setting div navHead1 container of the page */
-/* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
 .navHead1 {
   display: flex; 
   align-items: left;
   justify-content: space-between; /*Align the flex items at the center of the container: */
-  display: flex; 
-  align-items: left;
-  justify-content: space-between; /*Align the flex items at the center of the container: */
-} 
-
+}
 
 .logo{
 max-width:  500px;
 max-height: 140px;
-max-width:  500px;
-max-height: 140px;
 }
 
-/* Setting div search bar in the Nav container */
 
 /* Setting div search bar in the Nav container */
 .search {
@@ -90,89 +74,26 @@ max-height: 140px;
 color: #008cff;
 }
 
-/* setting up the slider for each menu. https://bennettfeely.com/clippy/*/
-.sliderContainer {
-  background-image: url('../img/background1.jpg');
-  clip-path: polygon(0 0, 100% 0, 100% 12%, 100% 89%, 85% 100%, 15% 100%, 0 90%, 0 13%); /* setting the background image shape */
-  overflow: hidden;
+/* Slider image for home page */
+.slider {
+width: 100%;
+height: 500px;
+overflow: hidden;
+position: relative;
 }
 
-/* Setting up the complete sliding items as per the Nav bar */
-.sliderWrapper {
-  display: flex;
-  width: 500vw;
-  transition: all 1.5s ease-in-out;  /* for java script file transition in out timing for slider wrapping */
+.slider img {
+width: 100%;
+height: auto;
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
 }
 
-.containerItem {
-  width: 100vw; /*viewport width - adjustable to available screen*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;  /* to keep the text (slider text) absolute w.r.t this box */
-}
-
-.ItemBg {
-  width: 850px; 
-  height: 490px;
-  border-radius: 20px;
-  position: absolute;
-  background-color: lightcoral;
-}
-
-.ItemImg {
-  z-index: 1;
-  border-radius: 20px
-  
-}
-
-/* setting up of slider titles text content */
-.ItemTitle {
-  position: absolute;
-  top: 10%;
-  right: 8%;
-  font-size: 60px;
-  font-weight: 900;
-  text-align: center;
-  color: rgb(82, 3, 82);
-  z-index: 1;
-}
-
-/* set buy/shop button style */
-.Buy {
-  position: absolute;
-  top: 70%;
-  right: 10%;
-  font-size: 30px;
-  font-weight: 900;
-  color: white;
-  border: 1px solid gray;
-  background-color: black;
-  z-index: 1;
-  cursor: pointer;
-}
-
-/* buy Hover Effect */
-.Buy:hover {
-  background-color: white;
-  color: black;
-}
-
-/* setting up color for each slider Itemimage frame */ 
-.containerItem:nth-child(1) .ItemBg {
-  background-color: #094622;
-}
-.containerItem:nth-child(2) .ItemBg {
-  background-color: rebeccapurple;
-}
-.containerItem:nth-child(3) .ItemBg {
-  background-color: teal;
-}
-.containerItem:nth-child(4) .ItemBg {
-  background-color: cornflowerblue;
-}
-.containerItem:nth-child(5) .ItemBg {
-  background-color: rgb(48, 48, 4);
+.slider img.active {
+opacity: 1;
 }
 
 /* setting up services like shipping, return, gift cards etc */
@@ -315,28 +236,6 @@ footer {
 .fIcons{
   display: flex;
 }
-
-.slider {
-width: 100%;
-height: 500px;
-overflow: hidden;
-position: relative;
-}
-
-.slider img {
-width: 100%;
-height: auto;
-position: absolute;
-top: 0;
-left: 0;
-opacity: 0;
-transition: opacity 0.5s ease-in-out;
-}
-
-.slider img.active {
-opacity: 1;
-}
-
 
 .fIcon{
   width: 20px;
@@ -606,106 +505,38 @@ opacity: 1;
   transform: translateY(-50px);
   cursor: pointer;
 }
-/*
-.chart-container {
-width: 100%;
-height: 400px; /* adjust this value to change the height of the chart */
-/* max-width: 800px; /* adjust this value to set the maximum width of the chart */
-/*margin: 0 auto;
-position: relative;
-}
-.chart-container {
-margin: 20px;
-padding: 20px;
-border: 1px solid #ccc;
-border-radius: 10px;
-box-shadow: 0 0 10px #ccc;
+
+.chart-container {    /* Chart container */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  height: 500px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.chart-description {
-position: absolute; 
-bottom: 10px;
-left: 10px;
-background-color: #fff;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-.chart-description p {
-margin: 0;
+.chart-item {               /* styling for the chart items */
+  width: 50%;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.chart-canvas {
-width: 50%;
-height: 300px;
-}
-*/
-
-/* new one
-.chart-container {
-display: flex;
-flex-wrap: wrap;
-background-color: lightgray;
-}
-.chart-container {
-height: 400px; /* adjust this value to change the height of the chart */
-/*max-width: 1000px; /* adjust this value to set the maximum width of the chart */
-/*margin: 0 auto;
-position: relative;
-}
-
-.chart-item {
-width: 50%;
-position: relative;
-}
-
-.chart-description {
-position: absolute;
-bottom: 0;
-left: 0;
-padding: 10px;
-background-color: rgba(255, 255, 255, 0.8);
-width: 100%;
-text-align: center;
+.chart-description {           /* styling for the description of the chart */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 canvas {
-width: 100% !important;
-height: 90% !important;
-} */
-
-.chart-container {
-display: flex;
-flex-wrap: wrap;
-background-color: lightgray;
-height: 500px;
-max-width: 1000px;
-margin: 0 auto;
-padding: 20px;
-box-sizing: border-box;
-}
-
-.chart-item {
-width: 50%;
-position: relative;
-height: 100%;
-box-sizing: border-box;
-padding: 20px;
-}
-
-.chart-description {
-position: relative;
-bottom: 0;
-left: 0;
-padding: 10px;
-width: 100%;
-text-align: center;
-}
-
-canvas {
-width: 100% !important;
-height: 90% !important;
+  width: 100% !important;
+  height: 90% !important;
 }
 
 
@@ -734,30 +565,15 @@ So basically when our css is less than 480px it apllies different css as below .
     font-weight: 700;
     font-size: 20px;
   }
-
-  .sliderContainer{  /* no clip path design required for small screen.. */
-    clip-path: none;
-  }
-
-  .ItemImg{    /* reduced the image size  as per screen */
-    width: 90%;
-  }
-
-  .ItemBg{ /* reduced the image size  as per screen */
+  /* Slider image ratio change for multiple device */
+  .slider {
     width: 100%;
-    height: 100%;
+    height: 350px;
   }
 
-  .ItemTitle{  /* shift the title of the item to left, unset top, and position left bottom */
-    font-size: 20px;
-    left: -250;
-    top: 0
-  }
-
-  .Buy { /* position shop now buttom to bottom right and reduce text size */
-    Right: 0;
-    bottom: 0;
-    font-size: 10px;
+  .slider img {
+    width: 100%;
+    height: 350px;
   }
 
   .Services{ /* set the flex column wise instead of horizontal */
@@ -771,13 +587,23 @@ So basically when our css is less than 480px it apllies different css as below .
   .promotion{  /* setting new season to images column wise for small screen */
     flex-direction: column;
   }
-
-  .videoHead{ /* video not required for the small screem */
-      display: none;
-  }
-  .video{
-      display: none; /*Not required as of now for small screen view. Later will add the same using bootstrapping */
-
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    height: 600px;
+    width: 265;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-style: solid;
+    border-width: 2px;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out
   }
   /* About us page small screen view */
   .team{
@@ -806,7 +632,7 @@ So basically when our css is less than 480px it apllies different css as below .
     background-color: whitesmoke;
   }
 
-  .chart-item {
+  .chart-item {  /* all screen compatible view for charts */
     width: 100%;
     height: 50%;
     padding: 10px;
