@@ -605,6 +605,13 @@ So basically when our css is less than 480px it apllies different css as below .
     border-radius: 20px;
     transition: background-color 0.3s ease-in-out
   }
+  
+  .container {  /* small screen setting for product display page */
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+    display: flex;
+  }
   /* About us page small screen view */
   .team{
       width: 100%;
