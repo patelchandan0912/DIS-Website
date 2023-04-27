@@ -1,38 +1,34 @@
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Selected Lato fonts family from the fonts.google.com-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Fashion Jewellers- Sales Report Charts</title>
-  </head>
-  
-  <body>
-      <!-- Header/Nav and Footer Common to all pages-->
-      <nav id="navHead">
-          <div class="navHead1">
-              <div class="Head1Item">
-                  <a href="./index.html"><img src="./img/jewellerlogo.png" class="logo"  alt=""></a>
-              </div>
-              <div class="Head1Item">
-                  <div class="search">
-                      <input type="text" placeholder="Search..." class="searchInput">
-                      <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
-                  </div>
-              </div>
-          
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Selected Lato fonts family from the fonts.google.com-->
+  <link href={{url_for('text')}} rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+  <title>Fashion Jewellers/Chart</title>
+</head>
+
+<body>
+  <nav id="navHead">
+      <div class="navHead1">
+          <div class="Head1Item">
+              <a href="#"><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
           </div>
-          <div class="navHead2">
-            <a href="./index.html"> <h3 class="category">Home</h3></a>
-            <a href="./Product/product.html"> <h3 class="category">Products</h3></a>
-            <a href="./chart.html"> <h3 class="category">Sales Report Charts</h3></a>
-            <a href="./about/about.html"> <h3 class="category">About Us</h3></a>
-        </div>
-      </nav>
+          <div class="Head1Item">
+              <div class="search">
+                  <input type="text" placeholder="Search..." class="searchInput">
+                  <img src="{{url_for('static', filename='./img/search.png')}}" width="20" height="20" alt="" class="searchIcon">
+              </div>
+          </div>
+      </div>
+      <div class="navHead2">
+          <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
+          <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
+          <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
+          <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
+      </div>
+  </nav>
   
   <!--Two type of chart used in our page (bar chart and pie chart)-->
       
@@ -46,7 +42,7 @@
       </div>
     </div>
     
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src={{url_for('chartjs')}}></script>
       <script>
         const ctx1 = document.getElementById('barChart');
         const ctx2 = document.getElementById('pieChart');
@@ -120,65 +116,65 @@
         });
       </script>
   
-      <!--  Footer common to all pages  -->
-      <footer>
-        <div class="footerLeft">
-            <div>
-                <a href="./about/about.html"> <h1 class="fTitle">About Us</h1> </a>
-                <ul class="fList">
-                    <a href="./about/about.html">
-                    <li class="fItem">Chandan Patel</li>
-                    <li class="fItem">Raghav Khurana</li>
-                    <li class="fItem">Chandni Kumari</li>
-                    <li class="fItem">Shambhavi Mishra</li>
-                    </a>
-                </ul>
-            </div>
-            <div>
-                <h1 class="fTitle">Useful Links</h1>
-                <ul class="fList">
-                    <a href="./comingSoon.html"><li class="fItem">Support</li></a>
-                    <a href="./comingSoon.html"><li class="fItem">Refund</li></a>
-                    <a href="./comingSoon.html"><li class="fItem">FAQ</li></a>
-                    <a href="./comingSoon.html"><li class="fItem">Feedback</li></a>
-                    <a href="./comingSoon.html"><li class="fItem">Careers</li></a>
-                </ul>
-            </div>
-            <div>
-                <h1 class="fTitle">Products</h1>
-                <ul class="fList">
-                    <a href="./Product/product.html">
-                        <li class="fItem">Necklace</li>
-                        <li class="fItem">Earrings</li>
-                        <li class="fItem">Rings</li>
-                        <li class="fItem">Bracelets</li>
-                        <li class="fItem">Trending</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-        <div class="footerRight">
-            <div>
-                <h1 class="fTitle">Subscribe to our newsletter</h1>
-                <div class="fMail">
-                    <input type="text" placeholder="your@email.com" class="fInput">
-                    <button class="fButton">Join!</button>
-                </div>
-            </div>
-            <div>
-                <h1 class="fTitle">Follow Us</h1>
-                <div class="fIcons">
-                    <img src="./img/fb.png" alt="" class="fIcon">
-                    <img src="./img/twit.png" alt="" class="fIcon">
-                    <img src="./img/insta.png" alt="" class="fIcon">
-                    <img src="./img/whtsap.png" alt="" class="fIcon">
-                </div>
-            </div>
-            <div>
-                <span class="copyright">@Fashion Jewellers All rights reserved. 2023.</span>
-            </div>
-        </div>
-    </footer>
-  </body>
+      <!-- Footer of the page-->
+    <footer>
+      <div class="footerLeft">
+          <div>
+              <a href={{url_for('about')}}> <h1 class="fTitle">About Us</h1> </a>
+              <ul class="fList">
+                  <a href={{url_for('about')}}>
+                  <li class="fItem">Chandan Patel</li>
+                  <li class="fItem">Raghav Khurana</li>
+                  <li class="fItem">Chandni Kumari</li>
+                  <li class="fItem">Shambhavi Mishra</li>
+                  </a>
+              </ul>
+          </div>
+          <div>
+              <h1 class="fTitle">Useful Links</h1>
+              <ul class="fList">
+                  <a href={{url_for('comingsoon')}}><li class="fItem">Support</li></a>
+                  <a href={{url_for('comingsoon')}}><li class="fItem">Refund</li></a>
+                  <a href={{url_for('comingsoon')}}><li class="fItem">FAQ</li></a>
+                  <a href={{url_for('comingsoon')}}><li class="fItem">Feedback</li></a>
+                  <a href={{url_for('comingsoon')}}><li class="fItem">Careers</li></a>
+              </ul>
+          </div>
+          <div>
+              <h1 class="fTitle">Products</h1>
+              <ul class="fList">
+                  <a href={{url_for('product')}}>
+                      <li class="fItem">Necklace</li>
+                      <li class="fItem">Earrings</li>
+                      <li class="fItem">Rings</li>
+                      <li class="fItem">Bracelets</li>
+                      <li class="fItem">Trending</li>
+                  </a>
+              </ul>
+          </div>
+      </div>
+      <div class="footerRight">
+          <div>
+              <h1 class="fTitle">Subscribe to our newsletter</h1>
+              <div class="fMail">
+                  <input type="text" placeholder="your@email.com" class="fInput">
+                  <button class="fButton">Join!</button>
+              </div>
+          </div>
+          <div>
+              <h1 class="fTitle">Follow Us</h1>
+              <div class="fIcons">
+                  <img src="{{url_for('static', filename='./img/fb.png')}}" alt="" class="fIcon">
+                  <img src="{{url_for('static', filename='./img/twit.png')}}" alt="" class="fIcon">
+                  <img src="{{url_for('static', filename='./img/insta.png')}}" alt="" class="fIcon">
+                  <img src="{{url_for('static', filename='./img/whtsap.png')}}" alt="" class="fIcon">
+              </div>
+          </div>
+          <div>
+              <span class="copyright">@Fashion Jewellers All rights reserved. 2023.</span>
+          </div>
+      </div>
+  </footer>
+</body>
   
   <!--Ref: https://www.youtube.com/watch?v=H-DvSPRnKWQ-->

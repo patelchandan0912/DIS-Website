@@ -1,37 +1,32 @@
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Selected Lato fonts family from the fonts.google.com-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
-    <title>Fashion Jewellers/Products</title>
+    <link href={{url_for('text')}} rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+    <title>Fashion Jewellers/Product</title>
 </head>
 
 <body>
     <nav id="navHead">
         <div class="navHead1">
             <div class="Head1Item">
-                <a href="../index.html"><img src="../img/jewellerlogo.png" class="logo"  alt=""></a>
+                <a href="#"><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
             </div>
             <div class="Head1Item">
                 <div class="search">
                     <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="../img/search.png" width="20" height="20" alt="" class="searchIcon">
+                    <img src="{{url_for('static', filename='./img/search.png')}}" width="20" height="20" alt="" class="searchIcon">
                 </div>
             </div>
-            
         </div>
-         <!-- Header Links-->
         <div class="navHead2">
-            <a href="../index.html"> <h3 class="category">Home</h3></a>
-            <a href="../Product/product.html"> <h3 class="category">Products</h3></a>
-            <a href="../chart.html"> <h3 class="category">Sales Report Charts</h3></a>
-            <a href="../about/about.html"> <h3 class="category">About Us</h3></a>
+            <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
+            <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
+            <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
+            <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
         </div>
     </nav>
 
@@ -39,10 +34,10 @@
     <div class="productLandingPage">
         <div class="card">  <!-- Div for each tile -->
             <div class="cardImage"> <!-- This div contains the product image on the PLP tile-->
-                <img src="../img/b1.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/b1.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent"> <!-- Product Content insdie the tiles-->
-                <a href="./braceletPDP.html"><h1>Emerald Bracelet</h1></a>
+                <a href={{url_for('bracelet')}}><h1>Emerald Bracelet</h1></a>
                 <p class="price">$239.99</p>
                 <p>A beautiful emerald bracelet</p>
             </div>
@@ -52,10 +47,10 @@
         </div>
         <div class="card"><!-- Div for each tile -->
             <div class="cardImage"><!-- This div contains the product image on the PLP tile-->
-                <img src="../img/er1.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/er1.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent"><!-- Product Content insdie the tiles-->
-                <a href="./earringsPDP.html"><h1>Diamond Earring</h1></a>
+                <a href={{url_for('earring')}}><h1>Diamond Earring</h1></a>
                 <p class="price">$199.99</p>
                 <p>An elegant multilevel diamond earring</p>
             </div>
@@ -65,10 +60,10 @@
         </div>
         <div class="card"><!-- Div for each tile -->
             <div class="cardImage"><!-- This div contains the product image on the PLP tile-->
-                <img src="../img/n1.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/n1.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent"><!-- Product Content insdie the tiles-->
-                <a href="./necklacePDP.html"><h1>Cute Gold Heart Necklace</h1></a>
+                <a href={{url_for('necklace')}}><h1>Cute Gold Heart Necklace</h1></a>
                 <p class="price">$148.99</p>
                 <p>This cute brushed gold necklace is very versatile</p>
             </div>
@@ -78,10 +73,10 @@
         </div>
         <div class="card"><!-- Div for each tile -->
             <div class="cardImage"><!-- This div contains the product image on the PLP tile-->
-                <img src="../img/r1.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/r1.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent"><!-- Product Content insdie the tiles-->
-                <a href="./ringsPDP.html"><h1>4ct Diamond Ring</h1></a>
+                <a href={{url_for('rings')}}><h1>4ct Diamond Ring</h1></a>
             <p class="price">$199.99</p>
             <p>Bright 4 carat Diamond Ring with small diamonds on the band</p>
             </div>
@@ -92,7 +87,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/b2.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/b2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Brushed Diamond and Silver</h1>
@@ -106,7 +101,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/b3.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/b3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Gold Enclosed Diamond</h1>
@@ -120,7 +115,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/b4.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/b4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Gold painted bracelet</h1>
@@ -135,7 +130,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/er2.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/er2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Heart Earring</h1>
@@ -149,7 +144,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/er3.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/er3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Simple Faux Diamond Ring Earring</h1>
@@ -163,7 +158,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/er4.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/er4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Cube Glass Earring</h1>
@@ -177,7 +172,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/n2.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/n2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Diamond Pendant</h1>
@@ -191,7 +186,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/n3.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/n3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Ying Necklace</h1>
@@ -205,7 +200,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/n4.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/n4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Landscaper Ring Necklace</h1>
@@ -219,7 +214,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/r2.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/r2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>All around Diamond Ring</h1>
@@ -233,7 +228,7 @@
         
         <div class="card">
             <div class="cardImage">
-                <img src="../img/r3.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/r3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Blue Stone with Diamonds</h1>
@@ -247,7 +242,7 @@
 
         <div class="card">
             <div class="cardImage">
-                <img src="../img/r4.jpeg" alt="" style="width:100%">
+                <img src="{{url_for('static', filename='./img/r4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
                 <h1>Thick diamond studded Gold Ring</h1>
@@ -265,9 +260,9 @@
     <footer>
         <div class="footerLeft">
             <div>
-                <a href="../about/about.html"> <h1 class="fTitle">About Us</h1> </a>
+                <a href={{url_for('about')}}> <h1 class="fTitle">About Us</h1> </a>
                 <ul class="fList">
-                    <a href="../about/about.html">
+                    <a href={{url_for('about')}}>
                     <li class="fItem">Chandan Patel</li>
                     <li class="fItem">Raghav Khurana</li>
                     <li class="fItem">Chandni Kumari</li>
@@ -278,17 +273,17 @@
             <div>
                 <h1 class="fTitle">Useful Links</h1>
                 <ul class="fList">
-                    <a href="../comingSoon.html"><li class="fItem">Support</li></a>
-                    <a href="../comingSoon.html"><li class="fItem">Refund</li></a>
-                    <a href="../comingSoon.html"><li class="fItem">FAQ</li></a>
-                    <a href="../comingSoon.html"><li class="fItem">Feedback</li></a>
-                    <a href="../comingSoon.html"><li class="fItem">Careers</li></a>
+                    <a href={{url_for('comingsoon')}}><li class="fItem">Support</li></a>
+                    <a href={{url_for('comingsoon')}}><li class="fItem">Refund</li></a>
+                    <a href={{url_for('comingsoon')}}><li class="fItem">FAQ</li></a>
+                    <a href={{url_for('comingsoon')}}><li class="fItem">Feedback</li></a>
+                    <a href={{url_for('comingsoon')}}><li class="fItem">Careers</li></a>
                 </ul>
             </div>
             <div>
                 <h1 class="fTitle">Products</h1>
                 <ul class="fList">
-                    <a href="../Product/product.html">
+                    <a href={{url_for('product')}}>
                         <li class="fItem">Necklace</li>
                         <li class="fItem">Earrings</li>
                         <li class="fItem">Rings</li>
@@ -309,10 +304,10 @@
             <div>
                 <h1 class="fTitle">Follow Us</h1>
                 <div class="fIcons">
-                    <img src="../img/fb.png" alt="" class="fIcon">
-                    <img src="../img/twit.png" alt="" class="fIcon">
-                    <img src="../img/insta.png" alt="" class="fIcon">
-                    <img src="../img/whtsap.png" alt="" class="fIcon">
+                    <img src="{{url_for('static', filename='./img/fb.png')}}" alt="" class="fIcon">
+                    <img src="{{url_for('static', filename='./img/twit.png')}}" alt="" class="fIcon">
+                    <img src="{{url_for('static', filename='./img/insta.png')}}" alt="" class="fIcon">
+                    <img src="{{url_for('static', filename='./img/whtsap.png')}}" alt="" class="fIcon">
                 </div>
             </div>
             <div>
@@ -320,5 +315,5 @@
             </div>
         </div>
     </footer>
-    <script src="./js/app.js" ></script>
+    <script type= "text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
 </body>
