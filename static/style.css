@@ -1,0 +1,656 @@
+html {
+    scroll-behavior: smooth;
+  }
+  /* Body dfault font styling and setting padding and margin to zero */
+  body {
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* to set no decoration in the text for links in the nav bar */
+  a{
+    text-decoration : none;
+  }
+  /* for the nav tag */
+  nav {
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+  
+  /* setting div navHead1 container of the page */
+  /* The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. */
+  .navHead1 {
+    display: flex; 
+    align-items: left;
+    justify-content: space-between; /*Align the flex items at the center of the container: */
+  }
+  
+  .logo{
+  max-width:  500px;
+  max-height: 140px;
+  }
+  
+  .comingSoon{
+    text-align: center;
+    height: 50%;
+  }
+  
+  
+  /* Setting div search bar in the Nav container */
+  .search {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+  
+  /* Setting up the div search input */
+  .searchInput {
+    border: none;
+    background-color: transparent;
+    align-items: left;
+  }
+  
+  /* text in the placeholder */
+  .searchInput::placeholder {
+    color: lightgray;
+  }
+  
+  
+  /* setting div navHead2 container of the page */
+  .navHead2 {
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+  }
+  
+  /* setting up different menu items */
+  .category {
+    margin-right: 70px;
+    cursor: pointer;
+    color: lightgray;
+    font-weight: 400;
+  }
+  .category:hover{
+  color: #008cff;
+  }
+  
+  /* Slider image for home page */
+  .slider {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  }
+  
+  .slider img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slider img.active {
+  opacity: 1;
+  }
+  
+  /* setting up services like shipping, return, gift cards etc */
+  .Services {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  .Service {
+    display: flex;
+    flex-direction: column; /* to set flex items column wise */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .Name {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+  }
+  
+  .Name:hover{
+  color: red;
+  }
+  
+  .Details {
+    color: gray;
+    width: 50%;
+    height: 100px;
+  }
+  
+  /* Shop by Collection */
+  .collectionHead{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+  }
+  .collectionContainer {
+    padding: 50px;
+    display: flex;
+  }
+  
+  .collectionItem {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .collectionImg {
+      width: 100%;
+  }
+  
+  .promotion {
+    display: flex;
+  }
+  
+  /* Promotion item New Season, wedding collection and New Arrivals styling and setup */ 
+  .promotionItem {
+    flex: 1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .promotionImg {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .promotionTitle {
+    font-size: 40px;
+  }
+  
+  .promotionButton {
+    padding: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .promotionButton:hover{
+  color: #008cff
+  }
+  
+  /*Footer styling below */
+  footer {
+    display: flex;
+  }
+  
+  .footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  
+  .fTitle {
+    font-size: 16px;
+  }
+  
+  .fList {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .fItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .footerRight {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .fInput {
+    padding: 5px;
+  }
+  
+  .fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+  }
+  
+  .fIcons{
+    display: flex;
+  }
+  
+  .fIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .copyright{
+    font-weight: 300;
+    font-size: 14px;
+  }
+  /* css for the PLP pages, to ensure all tiles appear together*/
+  
+  .productLandingPage {
+    display: flex;
+    justify-content: space-between;
+    border-width: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 15px;
+    box-sizing: content-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  /* css for each tile card, containing image, content, price and cart buttons*/
+  
+  .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      height: 600px;
+      width: 265;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      border-style: solid;
+      border-width: 2px;
+      padding: 12px;
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      transition: background-color 0.3s ease-in-out
+    }
+  
+    .card:hover{
+      background-color: rgb(232, 230, 230);
+    }
+    
+    .price {
+      color: rgb(0, 137, 25);
+      font-size: 22px;
+      font-weight: 300;
+    }
+    
+    .cardImage{
+      height: 300px;
+      width: 100%;
+      border-radius: 20px;
+    }
+  
+    .cardContent{
+      height: 200px;
+    }
+  
+    .divCartButton{
+      height: 50px;
+      border-radius: 20px;
+    }
+  
+  
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      border-radius: 20px;
+    }
+  
+    
+    .card button:hover {
+      opacity: 0.7;
+      background-color: #081cfa;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      display: flex;
+    }
+  
+  /* css for the display page, divding into left column to display the product image and right to present product description*/
+    .left-column {
+      width: 65%;
+      position: relative;
+    }
+     
+    .right-column {
+      width: 35%;
+      margin-top: 60px;
+    }
+  
+    .left-column img {
+      width: 100%;
+      position: relative;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      width: 98%;
+      height: 90%;
+      border: #000;
+      border-width: 10px;
+      border-radius: 20px;
+    }
+     
+    .left-column img.active {
+      opacity: 1;
+    }
+  
+    .product-description {
+      border-bottom: 1px solid #E1E8EE;
+      margin-bottom: 20px;
+    }
+    .product-description span {
+      font-size: 25px;
+      color: #358ED7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .product-description h1 {
+      font-weight: 300;
+      font-size: 52px;
+      color: #43484D;
+      letter-spacing: -2px;
+    }
+    .product-description p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #a2b4c4;
+      line-height: 24px;
+    }
+  
+    .product-price {
+      display: flex;
+      align-items: center;
+      color: rgb(14, 163, 14);
+      text-align: center;
+    }
+     
+    .product-price span {
+      font-size: 26px;
+      font-weight: 450;
+      color: rgb(5, 177, 5);
+      margin-right: 20px;
+      text-align: center;
+    }
+     
+  /* css for each cart buttons with hover functionality and color changes*/
+    .cart-btn {
+      display: inline-block;
+      background-color: #65a1f0;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 30px;
+      transition: all .5s;
+    }
+    .cart-btn:hover {
+      background-color: #045588;
+    }
+    .wishlist-btn {
+      display: inline-block;
+      background-color: rgb(236, 86, 86);
+      border-radius: 6px;
+      font-size: 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 30px;
+      transition: all .5s;
+    }
+    .wishlist-btn:hover {
+      background-color: darkred;
+    }
+  
+  /*ABOUT US*/
+  /**/
+  .team{
+    position: relative;
+    width: 100%;
+    min-height: 120vh;  /*it is used to */ 
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;         /* to set flex items column wise */
+    background: #D8CED0;
+  
+  }
+  .team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,auto)); /* used for grid item's(pictures) size and location within a grid column*/
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .team-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  .centre h1{
+    color: black;
+    font-size: 4rem;
+    text-align: center;
+   
+  }
+  .centre h3{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .box{
+    padding: 16px;
+    border-radius: 15px;
+    transition: all .38s ease;
+  }
+  .box h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 8px;
+  }
+  .box h5{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 15px;
+    letter-spacing: 2px;                 /* used for space adjustment between letters to change the visual density*/
+  }
+  .icons i{
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: all .38s ease;          /* used to specify transition effect with a slow start followed by fast pace, followed by slow ending*/
+    margin-bottom: 10%;
+  }
+  .icons i:hover{
+    transform: scale(1.2);              /*As we hover over the icon the image shifts by scale of 1.2*/
+  }
+  .box:hover{                             /*Used for making hover effect*/
+    transform: translateY(-50px);
+    cursor: pointer;
+  }
+  
+  .chart-container {    /* Chart container */
+    display: flex;
+    flex-wrap: wrap;
+    background-color:   rgb(255, 255, 255);
+    height: 600px;
+    width: auto;
+    max-width: 83%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .chart-item {               /* styling for the chart items */
+    width: 50%;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .chart-description {           /* styling for the description of the chart */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 90% !important;
+  }
+  
+  
+  /* To make webpage more responsive we are adding media function which makes webpage compatible for smaller screen devices 
+  So basically when our css is less than 480px it apllies different css as below . Refrence w3 CSS @ media rule (https://www.w3schools.com/cssref/css3_pr_mediaquery.php)*/
+  
+  @media screen and (max-width:600px) {
+    nav{
+      padding: 20px;   /* will limit the padding to 20px for small screen*/ 
+    }
+  
+    .logo{
+        width: 100%;
+    }
+  
+    .search{
+      display: none;  /* removing search display for small screen */
+    }
+  
+    .navHead2{
+      flex-wrap: wrap;  /* Wrap up the nav bar in case of small screen */
+    }
+  
+    .category{      /* decrease margin and font - size of the nav category item */
+      margin: 20px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    /* Slider image ratio change for multiple device */
+    .slider {
+      width: 100%;
+      height: 350px;
+    }
+  
+    .slider img {
+      width: 100%;
+      height: 350px;
+    }
+  
+    .Services{ /* set the flex column wise instead of horizontal */
+      flex-direction: column;
+    }
+  
+    .collectionContainer{  /* setting the gallery collection container from horizontal to none */
+      display: none;
+    }
+  
+    .promotion{  /* setting new season to images column wise for small screen */
+      flex-direction: column;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      height: 600px;
+      width: 265;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      border-style: solid;
+      border-width: 2px;
+      padding: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      transition: background-color 0.3s ease-in-out
+    }
+    
+    .container {  /* small screen setting for product display page */
+      flex-direction: column;
+      width: auto;
+      align-items: center;
+      display: flex;
+    }
+    /* About us page small screen view */
+    .team{
+        width: 100%;
+        min-height: 100%;
+        padding: 90px 2%;
+    }
+    .centre h1{
+        font-size: 3.2rem;
+    }
+    /* small screen setting for the footer - left footer will appear first then at the bottom right footer */
+    footer{
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footerLeft{  /* this will appear first */
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .footerRight{  /* this will appear last */
+      padding: 20px;
+      width: 90%;
+      align-items: center;
+      background-color: whitesmoke;
+    }
+  
+    .chart-item {  /* all screen compatible view for charts */
+      width: 100%;
+      height: 50%;
+      padding: 10px;
+    }
+  }
+    
+  
