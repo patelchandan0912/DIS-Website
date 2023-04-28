@@ -148,31 +148,103 @@ nav {
     justify-content: space-between; /*Align the flex items at the center of the container: */
   }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 600px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
+  /*Footer styling below */
+  footer {
+    display: flex;
   }
-  nav{
-    padding: 20px;   /* will limit the padding to 20px for small screen*/ 
+  
+  .footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  
+  .fTitle {
+    font-size: 16px;
+  }
+  
+  .fList {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .fItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .footerRight {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .fInput {
+    padding: 5px;
+  }
+  
+  .fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+  }
+  
+  .fIcons{
+    display: flex;
+  }
+  
+  .fIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .copyright{
+    font-weight: 300;
+    font-size: 14px;
   }
 
-  .logo{
-      width: 100%;
+  @media screen and (max-width:600px) {
+      nav{
+        padding: 20px;   /* will limit the padding to 20px for small screen*/ 
+      }
+    
+      .logo{
+          width: 100%;
+      }
+    
+      .search{
+        display: none;  /* removing search display for small screen */
+      }
+    
+      .navHead2{
+        flex-wrap: wrap;  /* Wrap up the nav bar in case of small screen */
+      }
+    
+      .category{      /* decrease margin and font - size of the nav category item */
+        margin: 20px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    /* small screen setting for the footer - left footer will appear first then at the bottom right footer */
+    footer{
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footerLeft{  /* this will appear first */
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .footerRight{  /* this will appear last */
+      padding: 20px;
+      width: 90%;
+      align-items: center;
+      background-color: whitesmoke;
+    }
   }
-
-  .search{
-    display: none;  /* removing search display for small screen */
-  }
-
-  .navHead2{
-    flex-wrap: wrap;  /* Wrap up the nav bar in case of small screen */
-  }
-
-  .category{      /* decrease margin and font - size of the nav category item */
-    margin: 20px;
-    font-weight: 700;
-    font-size: 20px;
-  }
-}
-

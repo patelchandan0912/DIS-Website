@@ -104,16 +104,17 @@ def gicp():
 @app.route("/chartjs")
 def chartjs():
     return redirect("https://cdn.jsdelivr.net/npm/chart.js")
-@app.route('/signup', methods=["GET", "POST"])
+
+@app.route('/signup', methods=["GET", "POST"])  ### Signup  route. function will handle both POST and GET requests
 def signup():
-    session.pop('error_message', None)
-    if request.method == "POST":
-        fname = request.form['fname']
+    session.pop('error_message', None) #removes the error message from the user's session, if it exists.
+    if request.method == "POST": #If it is, it means the user has submitted a sign up form.
+        fname = request.form['fname'] #lines retrieve the form data submitted by the user 
         lname = request.form['lname']
         phone = request.form['phone']
         email = request.form['email']
         psw = request.form['psw']
-        phone_regex = re.compile(r'^\d{3}-?\d{3}-?\d{4}$')
+        phone_regex = re.compile(r'^\d{3}-?\d{3}-?\d{4}$') # line compiles a regular expression pattern for validating the phone number entered by the user. This pattern will match phone numbers in the format of "555-555-5555" or "5555555555"
         if not fname or not lname or not phone or not email or not psw:
             session['error_message'] = 'Please fill all the fields'
         elif not bool(re.match(phone_regex, phone)):
@@ -121,12 +122,12 @@ def signup():
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             session['error_message'] = 'please enter a valid email id'
         elif not len(psw) > 7:
-            session['error_message'] = 'Password should contain greater than 7 characters'
+            session['error_message'] = 'Password should contain greater than 7 characters' #These lines validate the user's input data. If any of the fields are empty or if the phone number, email or password do not match the required pattern, an error message is stored in the user's session.
         else:
             connection = sqlite3.connect('customers.db')
             curs = connection.cursor()
             curs.execute("Select * from customers where email = ?", (email, ))
-            isUserExisted = curs.fetchone()
+            isUserExisted = curs.fetchone()  #These lines check if a user with the given email already exists in the database.
             if not isUserExisted:
                 connection = sqlite3.connect('customers.db')
                 curs = connection.cursor()

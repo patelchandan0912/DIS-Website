@@ -674,6 +674,36 @@ html {
       height: 50%;
       padding: 10px;
     }
+
+    /* media css codes for customer list page */
+    /* Set table width to 100% and hide overflow */
+  .customersTable {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Make table header cells stack vertically */
+  .tableHead td {
+    display: block;
+  }
+
+  /* Set table data cells to display as block with padding */
+  td {
+    display: block;
+    padding: 8px;
+  }
+
+  /* Add border to table data cells for better readability */
+  td:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Hide table row borders */
+  tr {
+    border: none;
+  }
 }
-    
+
+
+
   
