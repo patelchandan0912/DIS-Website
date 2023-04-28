@@ -5,8 +5,6 @@ import re
 app= Flask(__name__)
 app.secret_key = 'your secret key'
 
-connection = sqlite3.connect('customers.db')
-connection.execute('CREATE TABLE IF NOT EXISTS customers ( id INTEGER PRIMARY KEY, firstname TEXT not null, lastname text not null, phone text not null, email TEXT NOT NULL, password TEXT NOT NULL)')
 
 @app.route("/")
 def home():
@@ -26,18 +24,6 @@ def chart():
 @app.route("/comingsoon")
 def comingsoon():
     return render_template("comingSoon.html") 
-
-
-@app.route('/customers')
-def customers():
-    con = sqlite3.connect("customers.db")
-    con.row_factory = sqlite3.Row
-
-    cur = con.cursor()
-    cur.execute("SELECT * FROM customers")
-
-    rows = cur.fetchall()
-    return render_template("customers.html", rows=rows)
 
 @app.route("/earring")
 def earring():
@@ -105,6 +91,9 @@ def gicp():
 def chartjs():
     return redirect("https://cdn.jsdelivr.net/npm/chart.js")
 
+connection = sqlite3.connect('customers.db')
+connection.execute('CREATE TABLE IF NOT EXISTS customers ( id INTEGER PRIMARY KEY, firstname TEXT not null, lastname text not null, phone text not null, email TEXT NOT NULL, password TEXT NOT NULL)')
+
 @app.route('/signup', methods=["GET", "POST"])  ### Signup  route. function will handle both POST and GET requests
 def signup():
     session.pop('error_message', None) #removes the error message from the user's session, if it exists.
@@ -137,32 +126,21 @@ def signup():
                 user = curs.fetchone()
                 session['user_info'] = user[0]
                 return render_template('index.html', user = user)
+                #These lines insert the new user's information into the database if the user does not already exist. Then, the user is fetched from the database, stored in the session, and the index.html page is rendered with the user's information.
             else:
                 session['error_message'] = 'User already exists with that email'
     return render_template('signup.html')
 
+@app.route('/customers')
+def customers():
+    con = sqlite3.connect("customers.db")
+    con.row_factory = sqlite3.Row
 
-@app.route('/login', methods=["GET", "POST"])
-def login():
-    session.pop('error_message', None)
-    if request.method == "POST":
-        email = request.form['email']
-        password = request.form['psw']
-        if not email or not password:
-            session['error_message'] = 'Please fill all the fields'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-            session['error_message'] = 'please enter a valid email id'
-        elif not len(password) > 7:
-            session['error_message'] = 'Password should contain greater than 7 characters'
-        else:
-            connection = sqlite3.connect('customers.db')
-            curs = connection.cursor()
-            curs.execute("Select * from customers where email = ?", (email, ))
-            user = curs.fetchone()
-            if not user:
-                session['error_message'] = 'Please enter valid email & password'
-            else:
-                session['user_info'] = user[0] 
-                return render_template('index.html', user = user)
-    return render_template('login.html')
+    cur = con.cursor()
+    cur.execute("SELECT * FROM customers")
 
+    rows = cur.fetchall()
+    return render_template("customers.html", rows=rows)
+
+
+ 
