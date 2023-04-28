@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
   }
@@ -36,7 +37,9 @@ html {
   
   .comingSoon{
     text-align: center;
-    height: 50%;
+    background: url(./img/backgroundImage.jpg);
+    margin: 0 auto;
+    height: 100%;
   }
   
   
@@ -61,7 +64,27 @@ html {
     color: lightgray;
   }
   
-  
+  .customersTableDiv{
+    text-align: center;
+    color: chocolate;
+    background: url(./img/backgroundImage.jpg);
+    margin: 0 auto;
+    height: 100%;
+  font-size: 1.5em;
+  }
+
+.customersTable{
+  margin: auto;
+  width: 90%;
+  font-size: 1.5em;
+}
+
+  .tableHead{
+    background-color: #008cff;
+    color: white;
+  font-size: 1.5em;
+  }
+
   /* setting div navHead2 container of the page */
   .navHead2 {
     display: flex;
@@ -651,6 +674,6 @@ html {
       height: 50%;
       padding: 10px;
     }
-  }
+}
     
   

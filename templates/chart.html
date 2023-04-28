@@ -13,7 +13,9 @@
   <nav id="navHead">
       <div class="navHead1">
           <div class="Head1Item">
-              <a href="#"><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
+
+                <a href={{url_for('home')}}><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
+
           </div>
           <div class="Head1Item">
               <div class="search">
@@ -23,11 +25,14 @@
           </div>
       </div>
       <div class="navHead2">
-          <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
-          <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
-          <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
-          <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
-      </div>
+        <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
+        <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
+        <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
+        <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
+        <a href={{url_for('signup')}}> <h3 class="category">Sign Up</h3></a>
+        <a href={{url_for('customers')}}> <h3 class="category">Customers</h3></a>
+    </div>
+</nav>
   </nav>
   
   <!--Two type of chart used in our page (bar chart and pie chart)-->

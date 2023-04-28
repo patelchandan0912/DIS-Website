@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Selected Lato fonts family from the fonts.google.com-->
+        <link href={{url_for('text')}} rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}" />
+        <title>Fashion Jewellers/Login</title>
+    </head>
+    
+<body>
+<div>
+    <nav id="navHead">
+      <div class="navHead1">
+          <div class="Head1Item">
+
+                <a href={{url_for('home')}}><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
+
+           </div>
+           <div class="Head1Item">
+              <div class="search">
+                  <input type="text" placeholder="Search..." class="searchInput">
+                  <img src="{{url_for('static', filename='./img/search.png')}}" width="20" height="20" alt="" class="searchIcon">
+              </div>
+          </div>
+      </div>
+      <div class="navHead2">
+          <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
+          <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
+          <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
+          <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
+          <a href={{url_for('signup')}}> <h3 class="category">Sign Up</h3></a>
+          <a href={{url_for('login')}}> <h3 class="category">Login</h3></a>
+  
+        </div>
+  </nav>
+  </div>
+<form action="{{ url_for('login')}}" method="POST">
+
+  <div class="container">
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter your email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <button type="button" class="cancelbtn">Cancel</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</body>
+</html>

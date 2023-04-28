@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Selected Lato fonts family from the fonts.google.com-->
+    <link href={{url_for('text')}} rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css')}}" />
+    <title>Fashion Jewellers/SignUp</title>
+</head>
+
+<body>
+
+<form action="{{ url_for('signup')}}" method="POST" style="border:1px solid #ccc">
+  {% if 'error_message' in session %}
+  <div style="color: rgb(242, 12, 12)">{{ session['error_message'] }}</div>
+  {% endif %}  
+  
+    
+    <div class="signUpcontainer">
+    <div>
+      <nav id="navHead">
+        <div class="navHead1">
+            <div class="Head1Item">
+  
+                <a href={{url_for('home')}}><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
+
+             </div>
+             <div class="Head1Item">
+                <div class="search">
+                    <input type="" placeholder="Search..." class="searchInput">
+                    <img src="{{url_for('static', filename='./img/search.png')}}" width="20" height="20" alt="" class="searchIcon">
+                </div>
+            </div>
+        </div>
+        <div class="navHead2">
+            <a href={{url_for('home')}}> <h3 class="category">Home</h3></a>
+            <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
+            <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
+            <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
+            <a href={{url_for('signup')}}> <h3 class="category">Sign Up</h3></a>
+            <a href={{url_for('customers')}}> <h3 class="category">Customers</h3></a>
+        </div>
+    </nav>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="formFields">
+    <label for="fname"  style="color: deeppink"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="fname" required aria-errormessage="This">
+    
+    <label for="lname" style="color: deeppink"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lname"   required>
+    
+    <label for="phone" style="color: deeppink"><b>Phone</b></label>
+    <input type="tel" placeholder="Enter Phone Number" name="phone" pattern="[0-9]{10}" required>
+
+    <label for="email" style="color: deeppink"><b>Email</b></label>
+    <input type="text" placeholder="Enter your email" name="email" required>
+
+    <label for="psw" style="color: deeppink"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label style="color: dodgerblue">
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <p style="color: rgb(0, 0, 0)">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions</a></p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+</div>
+  </div>
+</form>
+
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible">
@@ -31,81 +30,27 @@
             <a href={{url_for('customers')}}> <h3 class="category">Customers</h3></a>
         </div>
     </nav>
-  
+    <div class="customersTableDiv" style="overflow-x:auto">
 
-    <div class="slider">
-        <a href={{url_for('product')}}>
-        <img src="{{url_for('static', filename='./img/sl1.jpg')}}" alt="" >        
-        <img src="{{url_for('static', filename='./img/sl2.jpg')}}" alt="" >               
-        <img src="{{url_for('static', filename='./img/earrings1.jpg')}}" alt="" >      
-        </a>    
-    </div>
-      
-
-    <!-- Addition of Services-->
-    <div class="Services">
-        <div class="Service">
-            <img src="{{url_for('static', filename='./img/shipping.png')}}" alt="" class="Icon"> <br>
-            <a href={{url_for('comingsoon')}}><span class="Name">FREE SHIPPING</span></a><br>
-            <span class="Details">Free worldwide shipping on all orders.</span>
-        </div>
-        <div class="Service">
-            <img class="Icon" src="{{url_for('static', filename='./img/return.png')}}" alt=""><br>
-            <a href={{url_for('comingsoon')}}><span class="Name">7 DAYS RETURN</span></a><br>
-            <span class="Details">No question return and easy refund in 14 days (T&C**).</span>
-        </div>
-        <div class="Service">
-            <img class="Icon" src="{{url_for('static', filename='./img/gift.png')}}" alt=""><br>
-            <a href={{url_for('comingsoon')}}><span class="Name">GIFT CARDS</span></a><br>
-            <span class="Details">Buy gift cards and use coupon codes easily.</span>
-        </div>
-        <div class="Service">
-            <img class="Icon" src="{{url_for('static', filename='./img/contact.png')}}" alt=""><br>
-            <a href={{url_for('comingsoon')}}><span class="Name">CONTACT US</span></a><br>
-            <span class="Details">Keep in touch via email and support system.</span>
-        </div>
-    </div>
-
-    <!-- Gallery addition to the page-->
-    <h2 class="collectionHead"> SHOP BY COLLECTION</h2>
-    <div class="collectionContainer">
-        <div class="collectionItem">
-            <h1>Be Yourself!</h1>
-            <h2> Jewelry That Says Be Yourself</h2>
-            <a href={{url_for('product')}}><img src="{{url_for('static', filename='./img/gallery2.jpg')}}" alt="" class="collectionImg"></a>
-        </div>
-        <div class="collectionItem">
-            <a href={{url_for('product')}}><img src="{{url_for('static', filename='./img/gallery3.jpg')}}" alt="" class="collectionImg"></a>
-            <h1>Diamond Stud Rings!</h1>
-            <h2> A Wide Range Of Exquisite Rings</h2>
-        </div>
-        <div class="collectionItem">
-            <h1>Celeb Style!</h1>
-            <h2> Browse Collections And Designers</h2>
-            <a href={{url_for('product')}}><img src="{{url_for('static', filename='./img/gallery1.jpg')}}" alt="" class="collectionImg"></a>
-        </div>
-    </div>
-
-    <!-- All Season & New Collection Display and Promotion-->
-    <div class="promotion">
-        <div class="promotionItem">
-            <a href={{url_for('product')}}><img src="{{url_for('static', filename='./img/About_BG_07.jpg')}}" alt="" class="promotionImg"></a>
-        </div>
-        <div class="promotionItem">
-            <h3>WEDDING COLLECTIONS</h3>
-            <h1 class="promotionTitle">All Season</h1>
-            <h1 class="promotionTitle">New Arrivals</h1>
-            <a href={{url_for('product')}}>
-                <button class="promotionButton">CHOOSE YOUR STYLE</button>
-            </a>
-        </div>
-        <div class="promotionItem">
-            <a href={{url_for('product')}}><img src="{{url_for('static', filename='./img/earring5.jpg')}}" alt="" class="promotionImg"></a>
-        </div>
-    </div>
-    <br>
-    <br>
-
+        <h1>List of Signed Up Customers <Table></Table></h1>
+        <table class="customersTable" style="overflow-x:auto" border = 1>
+            <thead class="tableHead" style="overflow-x:auto">
+                <td>Name</td>
+                <td>Phone</td>
+                <td>Email</td>
+            </thead>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["firstname"] }}{{' '}}{{ row["lastname"] }}</td>
+                <td>{{ row["phone"] }}</td>
+                <td>{{ row["email"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href = "/">Back to Home Page</a>
+        
+    </div>    
     <!-- Footer of the page-->
     <footer>
         <div class="footerLeft">

@@ -13,7 +13,7 @@
     <nav id="navHead">
         <div class="navHead1">
             <div class="Head1Item">
-                <a href="#"><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
+                <a href={{url_for('home')}}><img src="{{url_for('static', filename='./img/jewellerlogo.png')}}" alt="" class="logo"></a>
             </div>
             <div class="Head1Item">
                 <div class="search">
@@ -27,6 +27,8 @@
             <a href={{url_for('product')}}> <h3 class="category">Products</h3></a>
             <a href={{url_for('chart')}}> <h3 class="category">Sales Report Charts</h3></a>
             <a href={{url_for('about')}}> <h3 class="category">About Us</h3></a>
+            <a href={{url_for('signup')}}> <h3 class="category">Sign Up</h3></a>
+            <a href={{url_for('customers')}}> <h3 class="category">Customers</h3></a>
         </div>
     </nav>
 
@@ -90,7 +92,7 @@
                 <img src="{{url_for('static', filename='./img/b2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Brushed Diamond and Silver</h1>
+                <h1>Brushed Diamond Band</h1>
                 <p class="price">$99.97</p>
                 <p>Brushed Silver and diamond Band</p>
             </div>
@@ -118,7 +120,7 @@
                 <img src="{{url_for('static', filename='./img/b4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Gold painted bracelet</h1>
+                <h1>Gold Bracelet</h1>
             <p class="price">$33.89</p>
             <p>Daily Wear gold painted bracelet</p>
             </div>
@@ -133,9 +135,9 @@
                 <img src="{{url_for('static', filename='./img/er2.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Heart Earring</h1>
+                <h1>Blue Earring</h1>
                 <p class="price">$19.99</p>
-                <p>A cute heart earring</p>
+                <p>A cute dark blue earring</p>
             </div>
             <div class="divCartButton">
                 <p><button>Add to Cart</button></p>
@@ -147,7 +149,7 @@
                 <img src="{{url_for('static', filename='./img/er3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Simple Faux Diamond Ring Earring</h1>
+                <h1>Faux Diamond Earrings</h1>
                 <p class="price">$79.99</p>
                 <p>A set of simple ring earrings</p>
             </div>
@@ -189,7 +191,7 @@
                 <img src="{{url_for('static', filename='./img/n3.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Ying Necklace</h1>
+                <h1>Ying Yang Necklace</h1>
                 <p class="price">$99.99</p>
                 <p>This Ying necklace is very versatile</p>
             </div>
@@ -245,7 +247,7 @@
                 <img src="{{url_for('static', filename='./img/r4.jpeg')}}" alt="" style="width:100%">
             </div>
             <div class="cardContent">
-                <h1>Thick diamond studded Gold Ring</h1>
+                <h1>Diamond & Gold Ring</h1>
             <p class="price">$2204.99</p>
             <p>The perfect royal look to complement any outfit</p>
             </div>
